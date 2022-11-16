@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vallauri's Unofficial Timetable</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="FlopRario">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="JS/cls.js"></script>
+    <script src="JS/main.js"></script>
+    <link href="CSS/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="height: 250px;">
+        <div style="text-align: center; margin: 15px;">
+            <h1 id="lblNomeClasse">...</h1>
+            <h4 id="lblIntestazioneClasse"></h4>
+        </div>
+        <div style="margin-left: 10px; font-size: 9pt;">
+            Coordinatore: <b id="lblCoordinatore"></b>
+            <br />
+            <i><span id="lblNumeroStudenti"></span> studenti</i>
+        </div>
+        <br />
+        <div style="width: fit-content; margin: 0 auto;">
+            <select id="cmbOrario">
+                <option value="A_TUTTE">Orario A</option>
+                <option value="Y_STUDENTI">Orario B (Prime)</option>
+                <option value="Z_STUDENTI">Orario B (Altri)</option>
+            </select>
+            &nbsp;
+            <select id="cmbClasse"></select>
+        </div>
+        <div id="grpBottoniGiorno">
+            <button onclick="Main.VisualizzaOrario(0)">Lun</button>&nbsp;
+            <button onclick="Main.VisualizzaOrario(1)">Mar</button>&nbsp;
+            <button onclick="Main.VisualizzaOrario(2)">Mer</button>&nbsp;
+            <button onclick="Main.VisualizzaOrario(3)">Gio</button>&nbsp;
+            <button onclick="Main.VisualizzaOrario(4)">Ven</button>&nbsp;
+            <button onclick="Main.VisualizzaOrario(5)">Sab</button>&nbsp;
+        </div>
+        <br />
+        <h3 id="lblCurrentDay" style="text-align:center;"></h3>
+        <br />
+    </div>
+    <div id="grpOrario" style="height: calc(100vh - 270px); overflow: auto;">
+        
+    </div>
+</body>
+</html>
